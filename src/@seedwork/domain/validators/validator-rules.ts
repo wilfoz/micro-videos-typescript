@@ -1,15 +1,15 @@
-import ValidationError from '../errors/validation-error';
+import { ValidationError } from '../../domain/errors/validation-error';
 
 export default class ValidatorRules {
-    
-    private constructor(private value: any, private property: string) {}
+
+    private constructor(private value: any, private property: string) { }
 
     static values(value: any, property: string) {
         return new ValidatorRules(value, property);
     }
 
     required(): Omit<this, "required"> {
-        if(this.value === null || this.value === undefined || this.value === "") {
+        if (this.value === null || this.value === undefined || this.value === "") {
             throw new ValidationError(`The ${this.property} is required`);
         }
         return this;
