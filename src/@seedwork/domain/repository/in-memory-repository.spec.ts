@@ -1,5 +1,5 @@
 import Entity from '../entity/entity';
-import InMemoryRepository from './in-memory-repository';
+import { InMemoryRepository } from './in-memory-repository';
 import NotFoundError from '../errors/not-found.error';
 import UniqueEntityId from '../value-objects/unique-entity-id.vo';
 
@@ -93,5 +93,5 @@ describe("InMemoryRepository Unit Tests", () => {
         await repository.delete(entity.uniqueEntityId);
         expect(repository.items).toHaveLength(0);
     });
-    
+
 });
