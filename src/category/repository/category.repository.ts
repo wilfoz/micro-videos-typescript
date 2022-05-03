@@ -19,4 +19,4 @@ export namespace CategoryRepository {
     > { }
 }
 
-export default CategoryRepository;
+export default CategoryRepository; 0
