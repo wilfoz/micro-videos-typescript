@@ -4,7 +4,6 @@ import {
     SearchResult as DefaultSearchResult,
 } from '../../@seedwork/domain/repository/repository-contracts';
 import { Category } from '../domain/entities/category';
-
 export namespace CategoryRepository {
     export type Filter = string;
 
@@ -18,5 +17,3 @@ export namespace CategoryRepository {
         SearchResult
     > { }
 }
-
-export default CategoryRepository; 0
