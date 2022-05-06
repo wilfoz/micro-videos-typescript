@@ -55,12 +55,12 @@ export class Category extends Entity<CategoryProperties> {
         this.props.name = value;
     }
 
-    get description(): string | undefined {
+    get description(): string | null {
         return this.props.description;
     }
 
     private set description(value: string) {
-        this.props.description = value;
+        this.props.description = value ?? null;
     }
 
     get is_active() {
