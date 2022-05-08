@@ -1,5 +1,5 @@
 import { CategoryOutputMapper } from './category.output';
-import { Category } from '../../domain/entities/category';
+import { Category } from '#category/domain/entities/category';
 describe("CategoryOutputMapper", () => {
     it("should convert a category in output", () => {
         const created_at = new Date();

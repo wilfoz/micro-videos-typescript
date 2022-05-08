@@ -1,5 +1,6 @@
-import { CategoryValidator, CategoryRules } from './category.validator';
-import CategoryValidatorFactory from './category.validator';
+import 
+    CategoryValidatorFactory, 
+    { CategoryValidator, CategoryRules } from './category.validator';
 
 describe("CategoryValidator Tests", () => {
     let validator: CategoryValidator;
@@ -39,7 +40,12 @@ describe("CategoryValidator Tests", () => {
     });
 
     test("valid cases for fields", () => {
-        const arrange = [
+        type Arrange = {
+            name: string,
+            description?: string | null,
+            is_active?: boolean,
+        }
+        const arrange: Arrange[] = [
             { name: "some value" },
             { name: "some value", description: undefined },
             { name: "some value", description: null },

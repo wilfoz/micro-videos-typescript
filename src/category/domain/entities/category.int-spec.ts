@@ -1,5 +1,4 @@
 import { Category } from './category';
-import {ValidationError} from '../../../@seedwork/domain/errors/validation-error';
 
 describe("Category Integration Tests", () => {
     describe("create method", () => {
@@ -40,7 +39,7 @@ describe("Category Integration Tests", () => {
 
         it("should a invalid category using is_active property", () => {
             expect(() => new Category({ name: "name", is_active: 5 as any })).containsErrorMessages({
-                is_active: ['is_active must be a boolean value'] 
+                is_active: ['is_active must be a boolean value']
             });
         });
 

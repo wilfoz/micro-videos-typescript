@@ -1,7 +1,7 @@
 import UpdateCategoryUseCase from '../update-category.use-case';
-import CategoryInMemoryRepository from '../../../infra/repository/category-in-memory.repository';
-import NotFoundError from '../../../../@seedwork/domain/errors/not-found.error';
-import { Category } from '../../../domain/entities/category';
+import CategoryInMemoryRepository from '#category/infra/repository/category-in-memory.repository';
+import NotFoundError from '#seedwork/domain/errors/not-found.error';
+import { Category } from '#category/domain/entities/category';
 
 describe("UpdateCategoryUseCase Tests Unit", () => {
     let useCase: UpdateCategoryUseCase;
@@ -21,7 +21,17 @@ describe("UpdateCategoryUseCase Tests Unit", () => {
         const spyUpdate = jest.spyOn(repository, 'update');
         const entity = new Category({ name: 'Movie' });
         repository.items = [entity];
-        const arrange = [
+        type Arrange = {
+            input: { id: string, name: string, description?: null | string, is_active?: boolean },
+            expected: {
+                id: string,
+                name: string,
+                description: null | string,
+                is_active: boolean,
+                created_at: Date
+            }
+        }
+        const arrange: Arrange[] = [
             {
                 input: {
                     id: entity.id,

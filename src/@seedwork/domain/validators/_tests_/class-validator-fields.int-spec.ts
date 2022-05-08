@@ -13,7 +13,7 @@ class StubRules {
     }
 }
 class StubClassValidatorFields extends ClassValidatorFields<StubRules> {
-    validate(data): boolean {
+    validate(data: any): boolean {
         return super.validate(new StubRules(data));
     }
 }

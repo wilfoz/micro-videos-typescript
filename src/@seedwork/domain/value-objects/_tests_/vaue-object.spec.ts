@@ -1,5 +1,5 @@
 import ValueObject from '../value-object';
-import { deepFreeze } from '../../utils/object';
+import { deepFreeze } from '#seedwork/domain/utils/object';
 
 class StubValueObject extends ValueObject{}
 
