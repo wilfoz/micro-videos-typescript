@@ -1,15 +1,15 @@
 import CategoryInMemoryRepository from '#category/infra/repository/category-in-memory.repository';
 import { Category } from '#category/domain/entities/category';
-import DeleteCategoryUseCase from '../delete-category.use-case';
+import {DeleteCategoryUseCase} from '../delete-category.use-case';
 import NotFoundError from '#seedwork/domain/errors/not-found.error';
 
 describe("DeleteCategoryUseCase Tests Unit", () => {
-    let useCase: DeleteCategoryUseCase;
+    let useCase: DeleteCategoryUseCase.UseCase;
     let repository: CategoryInMemoryRepository;
 
     beforeEach(() => {
         repository = new CategoryInMemoryRepository();
-        useCase = new DeleteCategoryUseCase(repository);
+        useCase = new DeleteCategoryUseCase.UseCase(repository);
     });
 
     it("should throws error when entity not found", async () => {

@@ -1,14 +1,14 @@
 import CategoryInMemoryRepository from '#category/infra/repository/category-in-memory.repository';
-import ListCategoriesUseCase from '../list-categories.use-case';
+import { ListCategoriesUseCase } from '../list-categories.use-case';
 import { CategoryRepository } from '#category/repository/category.repository';
 import { Category } from '#category/domain/entities/category';
 describe("ListCategoryUseCase", () => {
-    let useCase: ListCategoriesUseCase;
+    let useCase: ListCategoriesUseCase.UseCase;
     let repository: CategoryInMemoryRepository;
 
     beforeEach(() => {
         repository = new CategoryInMemoryRepository();
-        useCase = new ListCategoriesUseCase(repository);
+        useCase = new ListCategoriesUseCase.UseCase(repository);
     });
 
     test("toOutput method", () => {
@@ -30,7 +30,7 @@ describe("ListCategoryUseCase", () => {
             last_page: 1
         });
 
-        const entity = new Category({name: 'Movie'});
+        const entity = new Category({ name: 'Movie' });
         result = new CategoryRepository.SearchResult({
             items: [entity],
             total: 1,
@@ -52,8 +52,8 @@ describe("ListCategoryUseCase", () => {
 
     it("should returns output using empty input with categories ordered by created_at", async () => {
         const items = [
-            new Category({name: 'Movie'}),
-            new Category({name: 'Music', created_at: new Date(new Date().getTime() + 100)}),
+            new Category({ name: 'Movie' }),
+            new Category({ name: 'Music', created_at: new Date(new Date().getTime() + 100) }),
         ];
         repository.items = items;
         const output = await useCase.execute({});
@@ -68,14 +68,14 @@ describe("ListCategoryUseCase", () => {
 
     it("should returns output using pagination, sort and filter", async () => {
         const items = [
-            new Category({name: 'a'}),
-            new Category({name: 'f'}),
-            new Category({name: 'AaA'}),
-            new Category({name: 'c'}),
-            new Category({name: 'AAA'}),
+            new Category({ name: 'a' }),
+            new Category({ name: 'f' }),
+            new Category({ name: 'AaA' }),
+            new Category({ name: 'c' }),
+            new Category({ name: 'AAA' }),
         ];
         repository.items = items;
-        
+
         let output = await useCase.execute({
             page: 1,
             per_page: 3,

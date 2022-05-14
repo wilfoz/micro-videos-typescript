@@ -1,15 +1,15 @@
-import UpdateCategoryUseCase from '../update-category.use-case';
+import { UpdateCategoryUseCase } from '../update-category.use-case';
 import CategoryInMemoryRepository from '#category/infra/repository/category-in-memory.repository';
 import NotFoundError from '#seedwork/domain/errors/not-found.error';
 import { Category } from '#category/domain/entities/category';
 
 describe("UpdateCategoryUseCase Tests Unit", () => {
-    let useCase: UpdateCategoryUseCase;
+    let useCase: UpdateCategoryUseCase.UseCase;
     let repository: CategoryInMemoryRepository;
 
     beforeEach(() => {
         repository = new CategoryInMemoryRepository();
-        useCase = new UpdateCategoryUseCase(repository);
+        useCase = new UpdateCategoryUseCase.UseCase(repository);
     });
 
     it("should throws error when entity no found", async () => {
