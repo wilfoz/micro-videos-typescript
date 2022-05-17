@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Category = void 0;
-const entity_1 = require("#seedwork/domain/entity/entity");
 const category_validator_1 = require("#category/domain/validators/category.validator");
-const validation_error_1 = require("#seedwork/domain/errors/validation-error");
-class Category extends entity_1.default {
+const validation_error_1 = require("#shared/domain/errors/validation-error");
+const entity_1 = require("#shared/domain/entity/entity");
+class Category extends entity_1.Entity {
     constructor(props, id) {
         var _a, _b, _c;
         Category.validate(props);

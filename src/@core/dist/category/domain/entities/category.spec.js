@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const category_1 = require("./category");
 const lodash_1 = require("lodash");
-const unique_entity_id_vo_1 = require("#seedwork/domain/value-objects/unique-entity-id.vo");
+const unique_entity_id_vo_1 = require("#shared/domain/value-objects/unique-entity-id.vo");
 describe("Category Unit Tests", () => {
     beforeEach(() => {
         category_1.Category.validate = jest.fn();

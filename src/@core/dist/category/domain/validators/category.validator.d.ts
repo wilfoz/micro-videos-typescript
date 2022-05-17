@@ -1,4 +1,4 @@
-import ClassValidatorFields from '#seedwork/domain/validators/class-validator-fields';
+import { ClassValidatorFields } from '#shared/domain';
 import { CategoryProperties } from '../entities/category';
 export declare class CategoryRules {
     name: string;

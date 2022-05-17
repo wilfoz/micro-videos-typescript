@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateCategoryUseCase = void 0;
-const category_1 = require("../../domain/entities/category");
+const category_1 = require("#category/domain/entities/category");
 const category_output_1 = require("../dto/category.output");
 var CreateCategoryUseCase;
 (function (CreateCategoryUseCase) {

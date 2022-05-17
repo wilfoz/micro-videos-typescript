@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListCategoriesUseCase = void 0;
 const category_repository_1 = require("#category/repository/category.repository");
 const category_output_1 = require("../dto/category.output");
-const pagination_output_1 = require("#seedwork/application/dto/pagination-output");
+const pagination_output_1 = require("#shared/application/dto/pagination-output");
 var ListCategoriesUseCase;
 (function (ListCategoriesUseCase) {
     class UseCase {

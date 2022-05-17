@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const update_category_use_case_1 = require("../update-category.use-case");
 const category_in_memory_repository_1 = require("#category/infra/repository/category-in-memory.repository");
-const not_found_error_1 = require("#seedwork/domain/errors/not-found.error");
+const not_found_error_1 = require("#shared/domain/errors/not-found.error");
 const category_1 = require("#category/domain/entities/category");
 describe("UpdateCategoryUseCase Tests Unit", () => {
     let useCase;
     let repository;
     beforeEach(() => {
-        repository = new category_in_memory_repository_1.default();
+        repository = new category_in_memory_repository_1.CategoryInMemoryRepository();
         useCase = new update_category_use_case_1.UpdateCategoryUseCase.UseCase(repository);
     });
     it("should throws error when entity no found", async () => {

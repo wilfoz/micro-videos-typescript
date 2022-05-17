@@ -6,7 +6,7 @@ describe("CreateCategoryUseCase", () => {
     let useCase;
     let repository;
     beforeEach(() => {
-        repository = new category_in_memory_repository_1.default();
+        repository = new category_in_memory_repository_1.CategoryInMemoryRepository();
         useCase = new create_category_use_case_1.CreateCategoryUseCase.UseCase(repository);
     });
     it("should create a category", async () => {

@@ -8,7 +8,7 @@ describe("ListCategoryUseCase", () => {
     let useCase;
     let repository;
     beforeEach(() => {
-        repository = new category_in_memory_repository_1.default();
+        repository = new category_in_memory_repository_1.CategoryInMemoryRepository();
         useCase = new list_categories_use_case_1.ListCategoriesUseCase.UseCase(repository);
     });
     test("toOutput method", () => {

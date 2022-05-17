@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CategoryValidator = exports.CategoryRules = void 0;
+const domain_1 = require("#shared/domain");
 const class_validator_1 = require("class-validator");
-const class_validator_fields_1 = require("#seedwork/domain/validators/class-validator-fields");
 class CategoryRules {
     constructor({ name, description, is_active, created_at }) {
         Object.assign(this, { name, description, is_active, created_at });
@@ -39,7 +39,7 @@ __decorate([
     __metadata("design:type", Date)
 ], CategoryRules.prototype, "created_at", void 0);
 exports.CategoryRules = CategoryRules;
-class CategoryValidator extends class_validator_fields_1.default {
+class CategoryValidator extends domain_1.ClassValidatorFields {
     validate(data) {
         return super.validate(new CategoryRules(data !== null && data !== void 0 ? data : {}));
     }

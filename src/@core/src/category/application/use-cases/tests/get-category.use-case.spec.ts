@@ -1,6 +1,6 @@
-import CategoryInMemoryRepository from '#category/infra/repository/category-in-memory.repository';
+import { CategoryInMemoryRepository } from '#category/infra/repository/category-in-memory.repository';
 import { GetCategoryUseCase } from '../get-category.use-case';
-import NotFoundError from '#seedwork/domain/errors/not-found.error';
+import NotFoundError from '#shared/domain/errors/not-found.error';
 import { Category } from '#category/domain/entities/category';
 describe("GetCategoryUseCase", () => {
     let useCase: GetCategoryUseCase.UseCase;

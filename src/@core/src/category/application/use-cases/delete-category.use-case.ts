@@ -1,5 +1,5 @@
 import { CategoryRepository } from '#category/repository/category.repository';
-import { UseCase as DefaultUseCase } from '#seedwork/application/use-case';
+import { UseCase as DefaultUseCase } from '#shared/application/use-case';
 
 export namespace DeleteCategoryUseCase {
     export class UseCase implements DefaultUseCase<Input, Output> {

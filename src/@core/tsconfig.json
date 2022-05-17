@@ -1,13 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs",
     "baseUrl": "./src",
     "paths": {
-      "#seedwork/*": ["./@seedwork/*"],
+      "#shared/*": ["./shared/*"],
       "#category/*": ["./category/*"]
     },
-    "outDir": "./dist",
+    "outDir": "./dist"
   },
-  "include": ["./src"]
+  "include": ["./src/"]
 }
